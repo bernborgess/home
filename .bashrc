@@ -17,3 +17,5 @@ shopt -s checkwinsize
 
 # Aliases
 alias python3=python
+alias dcc="ssh bernardoborges@login.dcc.ufmg.br"
+alias cpdcc='function _cpdcc() { scp "$1" bernardoborges@login.dcc.ufmg.br:; }; _cpdcc'
