@@ -1,11 +1,10 @@
-.stack
-.vim
-.stack
 .bash_history
 .bash_logout
 .lesshst
 .viminfo
 .config
-.*
+.*/
+*.swp
+.wget-hsts
 
 
