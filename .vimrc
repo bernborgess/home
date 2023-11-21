@@ -2,7 +2,7 @@ syntax on
 set ts=4 sw=4 mouse=a nu ai si
 set cursorline
 set expandtab
-set nobackup
+set nobackup nowritebackup
 set incsearch
 set ignorecase
 set smartcase
