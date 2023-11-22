@@ -1,14 +1,14 @@
-# Basic Config
+" Basic Config
 syntax on
 set ts=4 sw=4 mouse=a nu ai si cursorline expandtab nobackup incsearch ignorecase smartcase
 
-# Bliking Cursor
+" Blinking Cursor
 if &term =~ 'xterm' || &term == 'win32'
   let &t_SI = "\e[5 q" | let &t_SR = "\e[3 q" | let &t_EI = "\e[1 q" | let &t_ti .= "\e[1 q" | let &t_te .= "\e[0 q"
 endif
 
 
-# Maratona Hash
+" Maratona Hash
 function Hash(l)
         return system("sed '/^#/d' | cpp -dD -P -fpreprocessed | tr -d '[:space:]' | md5sum", a:l)
 endfunction
@@ -28,6 +28,6 @@ function PrintHash() range
 endfunction
 vmap <C-H> :call PrintHash()<CR>
 
-# Automatic C++ Template
+" Automatic C++ Template
 autocmd BufNewFile *.cpp 0r ~/.templ.cpp | 17 | startinsert!
 
