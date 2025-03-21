@@ -14,7 +14,7 @@
 - [ ] Mendelssohn - Violin Concerto in E Minor
 - [ ] Verdi - La Traviata
 - [ ] Strauss - Also sprach Zarathustra
-- [ ] Rachmaninoff - Piano Concerto No. 2 in C Minor
+- [x] Rachmaninoff - Piano Concerto No. 2 in C Minor
 - [ ] Monteverdi - L’Orfeo
 - [ ] Sibelius - Finlandia
 - [ ] Dvořák - Symphony No. 9 ("From the New World")
