@@ -1,11 +1,11 @@
 # Music Time
-- [ ] Bach - Mass in B Minor
+- [x] Bach - Mass in B Minor
 - [ ] Mozart - Requiem in D Minor
-- [ ] Beethoven - Symphony No. 9 in D Minor ("Choral")
+- [x] Beethoven - Symphony No. 9 in D Minor ("Choral")
 - [ ] Schubert - Symphony No. 8 in B Minor ("Unfinished")
 - [ ] Tchaikovsky - Swan Lake
 - [ ] Brahms - Ein deutsches Requiem
-- [ ] Wagner - Tristan und Isolde
+- [x] Wagner - Tristan und Isolde
 - [ ] Mahler - Symphony No. 2 ("Resurrection")
 - [ ] Debussy - Prelude to the Afternoon of a Faun
 - [ ] Stravinsky - The Rite of Spring
