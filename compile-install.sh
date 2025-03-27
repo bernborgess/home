@@ -23,3 +23,6 @@ make install
 
 # In haskell, debug version with
 # ghc-pkg list base
+
+# For cmake remember to
+# export SDL2_DIR="$HOME/.local/SDL2/lib/cmake/SDL2"
