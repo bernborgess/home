@@ -1,0 +1,1 @@
+- To look at Keyboard Shorcuts: Go to File > Preferences > Keyboard Shortcuts or press Ctrl + K Ctrl + S.
