@@ -17,3 +17,9 @@ make -j$(nproc)
 
 # Install
 make install
+
+# Debug errors with
+# ldd a_sdl2.out | grep SDL2
+
+# In haskell, debug version with
+# ghc-pkg list base
