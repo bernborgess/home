@@ -10,7 +10,7 @@
 - [ ] Debussy - Prelude to the Afternoon of a Faun
 - [ ] Stravinsky - The Rite of Spring
 - [x] Vivaldi - The Four Seasons
-- [ ] Haydn - The Creation
+- [x] Haydn - The Creation
 - [ ] Mendelssohn - Violin Concerto in E Minor
 - [ ] Verdi - La Traviata
 - [ ] Strauss - Also sprach Zarathustra
