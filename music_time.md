@@ -9,7 +9,7 @@
 - [ ] Mahler - Symphony No. 2 ("Resurrection")
 - [ ] Debussy - Prelude to the Afternoon of a Faun
 - [ ] Stravinsky - The Rite of Spring
-- [ ] Vivaldi - The Four Seasons
+- [x] Vivaldi - The Four Seasons
 - [ ] Haydn - The Creation
 - [ ] Mendelssohn - Violin Concerto in E Minor
 - [ ] Verdi - La Traviata
