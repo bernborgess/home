@@ -2,7 +2,7 @@
 - [x] Bach - Mass in B Minor
 - [ ] Mozart - Requiem in D Minor
 - [x] Beethoven - Symphony No. 9 in D Minor ("Choral")
-- [ ] Schubert - Symphony No. 8 in B Minor ("Unfinished")
+- [x] Schubert - Symphony No. 8 in B Minor ("Unfinished")
 - [ ] Tchaikovsky - Swan Lake
 - [ ] Brahms - Ein deutsches Requiem
 - [x] Wagner - Tristan und Isolde
