@@ -6,7 +6,7 @@
 - [ ] Tchaikovsky - Swan Lake
 - [ ] Brahms - Ein deutsches Requiem
 - [x] Wagner - Tristan und Isolde
-- [ ] Mahler - Symphony No. 2 ("Resurrection")
+- [x] Mahler - Symphony No. 2 ("Resurrection")
 - [ ] Debussy - Prelude to the Afternoon of a Faun
 - [ ] Stravinsky - The Rite of Spring
 - [x] Vivaldi - The Four Seasons
