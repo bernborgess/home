@@ -16,6 +16,6 @@
 - [ ] Strauss - Also sprach Zarathustra
 - [x] Rachmaninoff - Piano Concerto No. 2 in C Minor
 - [ ] Monteverdi - L’Orfeo
-- [ ] Sibelius - Finlandia
+- [x] Sibelius - Finlandia
 - [ ] Dvořák - Symphony No. 9 ("From the New World")
 - [ ] Handel - Messiah
