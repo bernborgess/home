@@ -17,5 +17,5 @@
 - [x] Rachmaninoff - Piano Concerto No. 2 in C Minor
 - [ ] Monteverdi - L’Orfeo
 - [x] Sibelius - Finlandia
-- [ ] Dvořák - Symphony No. 9 ("From the New World")
+- [x] Dvořák - Symphony No. 9 ("From the New World")
 - [ ] Handel - Messiah
