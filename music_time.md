@@ -1,21 +1,38 @@
 # Music Time
 - [x] Bach - Mass in B Minor
-- [ ] Mozart - Requiem in D Minor
+- [x] Mozart - Requiem in D Minor
 - [x] Beethoven - Symphony No. 9 in D Minor ("Choral")
 - [x] Schubert - Symphony No. 8 in B Minor ("Unfinished")
-- [ ] Tchaikovsky - Swan Lake
-- [ ] Brahms - Ein deutsches Requiem
+- [x] Tchaikovsky - Swan Lake
+- [x] Brahms - Ein deutsches Requiem
 - [x] Wagner - Tristan und Isolde
 - [x] Mahler - Symphony No. 2 ("Resurrection")
-- [ ] Debussy - Prelude to the Afternoon of a Faun
-- [ ] Stravinsky - The Rite of Spring
+- [x] Debussy - Prelude to the Afternoon of a Faun
+- [x] Stravinsky - The Rite of Spring
 - [x] Vivaldi - The Four Seasons
 - [x] Haydn - The Creation
-- [ ] Mendelssohn - Violin Concerto in E Minor
-- [ ] Verdi - La Traviata
-- [ ] Strauss - Also sprach Zarathustra
+- [x] Mendelssohn - Violin Concerto in E Minor
+- [x] Verdi - La Traviata
+- [x] Strauss - Also sprach Zarathustra
 - [x] Rachmaninoff - Piano Concerto No. 2 in C Minor
-- [ ] Monteverdi - L’Orfeo
+- [x] Monteverdi - L’Orfeo
 - [x] Sibelius - Finlandia
 - [x] Dvořák - Symphony No. 9 ("From the New World")
-- [ ] Handel - Messiah
+- [x] Handel - Messiah
+- [ ] Beethoven - Symphony No. 5 in C Minor  
+- [ ] Brahms - Symphony No. 1 in C Minor  
+- [ ] Bruckner - Symphony No. 4 "Romantic"  
+- [ ] Mussorgsky - Night on Bald Mountain  
+- [ ] Wagner - Tannhäuser Overture  
+- [ ] Liszt - Les Préludes  
+- [ ] Holst - The Planets (Mars, the Bringer of War)  
+- [ ] Saint-Saëns - Symphony No. 3 "Organ"  
+- [ ] Respighi - Pines of Rome  
+- [ ] Prokofiev - Dance of the Knights (Romeo and Juliet)  
+- [ ] Verdi - Requiem (Dies Irae)  
+- [ ] Rimsky-Korsakov - Capriccio Espagnol  
+- [ ] Borodin - Polovtsian Dances  
+- [ ] Tchaikovsky - Symphony No. 4 in F Minor  
+- [ ] Tchaikovsky - Symphony No. 5 in E Minor  
+- [ ] Khachaturian - Sabre Dance  
+- [ ] Shostakovich - Symphony No. 5 in D Minor  
