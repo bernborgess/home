@@ -2,6 +2,15 @@
 Bypass check if user has a real Microsoft account linked with the launcher<br>
 ⚠️ This is for entertainment purposes only ⚠️
 
+# TLDR
+- Open a terminal and run:
+```bash
+wget https://github.com/PrismLauncher/PrismLauncher/releases/download/9.4/PrismLauncher-Linux-Qt6-Portable-9.4.tar.gz
+tar -xzf PrismLauncher-Linux-Qt6-Portable-9.4.tar.gz
+echo '{"accounts": [{"entitlement": {"canPlayMinecraft": true,"ownsMinecraft": true},"type": "MSA"}],"formatVersion": 3}' > accounts.json
+./PrismLauncher
+```
+
 # This launcher is too complicated for me :(
 You can try out my other project [Offline Minecraft Launcher](https://github.com/antunnitraj/OfflineMinecraftLauncher)
 
