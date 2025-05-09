@@ -1,0 +1,14 @@
+{
+    // Annoying feature that won't open files until first edit
+    "workbench.editor.enablePreview": false,
+    // Annoying feature that puts a box on unicode characters
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    // Best window frame
+    "window.titleBarStyle": "custom",
+    // Because it won't follow my default browser
+    "workbench.externalBrowser": "firefox",
+    
+    // Rust Analyzer
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "rust-analyzer.check.command": "clippy",
+}
