@@ -23,10 +23,10 @@
 - [ ] Brahms - Symphony No. 1 in C Minor  
 - [ ] Bruckner - Symphony No. 4 "Romantic"  
 - [ ] Mussorgsky - Night on Bald Mountain  
-- [ ] Wagner - Tannhäuser Overture  
-- [ ] Liszt - Les Préludes  
-- [ ] Holst - The Planets (Mars, the Bringer of War)  
-- [ ] Saint-Saëns - Symphony No. 3 "Organ"  
+- [x] Wagner - Tannhäuser Overture  
+- [x] Liszt - Les Préludes  
+- [x] Holst - The Planets (Mars, the Bringer of War)  
+- [x] Saint-Saëns - Symphony No. 3 "Organ"  
 - [ ] Respighi - Pines of Rome  
 - [ ] Prokofiev - Dance of the Knights (Romeo and Juliet)  
 - [ ] Verdi - Requiem (Dies Irae)  
