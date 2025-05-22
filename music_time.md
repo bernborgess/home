@@ -32,7 +32,7 @@
 - [ ] Verdi - Requiem (Dies Irae)  
 - [ ] Rimsky-Korsakov - Capriccio Espagnol  
 - [ ] Borodin - Polovtsian Dances  
-- [ ] Tchaikovsky - Symphony No. 4 in F Minor  
+- [x] Tchaikovsky - Symphony No. 4 in F Minor  
 - [ ] Tchaikovsky - Symphony No. 5 in E Minor  
 - [ ] Khachaturian - Sabre Dance  
 - [ ] Shostakovich - Symphony No. 5 in D Minor  
