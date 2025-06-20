@@ -6,9 +6,9 @@
 - MENU - BRASIL [21-10-08-BRA-MENUS_12_1_33.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1031459)
 - HELPS DE CAMPOS/PERGUNTAS DIFERENCIAL - BRASIL [21-10-08-BRA-HELPS_DIF_12_1_33.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1031458)
 - APPSERVER [25-03-28-P12_APPSERVER_BUILD-24.3.0.5_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168421)
+- DBACCESS [25-02-08-TOTVS_DBACCESS_BUILD_24.1.0.2_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168439)
 - SMARTCLIENT HARPIA (?) [25-05-14-P12_SMARTCLIENT_WEBAPP_9.2.0_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1112226)
 
-- dbaccess
 - webagent
 
 ## General Setup
