@@ -1,15 +1,16 @@
 # Install TOTVS Protheus on openSUSE
 
 ## Download the required files
-- RESPOSITORIO [24-08-27_ATUALIZACAO_12.1.33_RH_MI_EXPEDICAO_CONTINUA.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1043595)
-- DICIONARIO DE DADOS [21-10-08-BRA-DICIONARIOS_COMPL_12_1_33.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1031455)
-- MENU - BRASIL [21-10-08-BRA-MENUS_12_1_33.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1031459)
-- HELPS DE CAMPOS/PERGUNTAS DIFERENCIAL - BRASIL [21-10-08-BRA-HELPS_DIF_12_1_33.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1031458)
-- APPSERVER [25-03-28-P12_APPSERVER_BUILD-24.3.0.5_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168421)
+<!-- - RESPOSITORIO [24-08-27_ATUALIZACAO_12.1.33_RH_MI_EXPEDICAO_CONTINUA.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1043595) -->
+<!-- - DICIONARIO DE DADOS [21-10-08-BRA-DICIONARIOS_COMPL_12_1_33.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1031455) -->
+<!-- - MENU - BRASIL [21-10-08-BRA-MENUS_12_1_33.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1031459) -->
+<!-- - HELPS DE CAMPOS/PERGUNTAS DIFERENCIAL - BRASIL [21-10-08-BRA-HELPS_DIF_12_1_33.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1031458) -->
+- TOTVS License Server [24-12-16-TOTVSLICENSE_3.6.3_1_LINUX.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1137544)
 - DBACCESS [25-02-08-TOTVS_DBACCESS_BUILD_24.1.0.2_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168439)
-- SMARTCLIENT HARPIA (?) [25-05-14-P12_SMARTCLIENT_WEBAPP_9.2.0_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1112226)
+- APPSERVER [25-03-28-P12_APPSERVER_BUILD-24.3.0.5_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168421)
+<!-- - SMARTCLIENT HARPIA (?) [25-05-14-P12_SMARTCLIENT_WEBAPP_9.2.0_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1112226) -->
 
-- webagent
+<!-- - webagent -->
 
 ## General Setup
 - Create and give access to the `totvs` directory
