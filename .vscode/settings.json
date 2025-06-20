@@ -7,8 +7,16 @@
     "window.titleBarStyle": "custom",
     // Because it won't follow my default browser
     "workbench.externalBrowser": "firefox",
-    
     // Rust Analyzer
     "editor.inlayHints.enabled": "offUnlessPressed",
     "rust-analyzer.check.command": "clippy",
+    "cSpell.words": [
+        "appserver",
+        "appsrvlinux",
+        "dbaccess",
+        "dbmonitor",
+        "protheus",
+        "totvs",
+        "totvslicense"
+    ],
 }
