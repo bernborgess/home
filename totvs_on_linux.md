@@ -16,7 +16,7 @@
 - Decompress the totvslicense archive
 ```bash
 tar -xf 24-12-16-TOTVSLICENSE_3.6.3_1_LINUX.TAR.GZ
-cd 24-12-16-TOTVSLICENSE_3.6.3_1_LINUX.TAR.GZ
+cd 24-12-16-TOTVSLICENSE_3.6.3_1_LINUX
 ```
 - Run the `install` file as `root`
 ```bash
@@ -26,20 +26,16 @@ sudo su
 - Accept all terms
 - Pick the target path `/totvs/totvslicense`
 - Use the default ports and accept the binaries
-- Create a initialize script with `vim /totvs/totvslicense/app.sh` and enter:
+- Check that it works and the service is running with
 ```bash
-#!/bin/bash
-
-declare -x LD_LIBRARY_PATH="/totvs/totvslicense/bin/appserver;"$LD_LIBRARY_PATH
-
-/totvs/totvslicense/bin/appserver/appsrvlinux
+systemctl licenseVirtual.service
 ```
 
 ## Installing DB Access
 - Decompress the dbaccess archive pointing to the install folder
 ```bash
 mkdir /totvs/dbaccess
-taz -xf 25-02-08-TOTVS_DBACCESS_BUILD_24.1.0.2_LINUX_X64.TAR.GZ -C /totvs/dbaccess
+tar -xf 25-02-08-TOTVS_DBACCESS_BUILD_24.1.0.2_LINUX_X64.TAR.GZ -C /totvs/dbaccess
 ```
 - Create a initialize script with `vim /totvs/dbaccess/app.sh` and enter:
 ```bash
@@ -47,6 +43,16 @@ taz -xf 25-02-08-TOTVS_DBACCESS_BUILD_24.1.0.2_LINUX_X64.TAR.GZ -C /totvs/dbacce
 
 /totvs/dbaccess/multi/dbaccess64
 ```
+- Test the db running
+```bash
+chmod +x /totvs/dbaccess/app.sh
+/totvs/dbaccess/app.sh
+```
+- Open `dbmonitor` in another shell with
+```bash
+/totvs/dbaccess/dbmonitor
+```
+And check that `localhost:7890` works...
 
 ## Installing Protheus AppServer
 > :construction: Not ready yet...
@@ -55,24 +61,32 @@ taz -xf 25-02-08-TOTVS_DBACCESS_BUILD_24.1.0.2_LINUX_X64.TAR.GZ -C /totvs/dbacce
 mkdir /totvs/protheus
 tar -xf 25-03-28-P12_APPSERVER_BUILD-24.3.0.5_LINUX_X64.TAR.GZ -C /totvs/protheus
 ```
+<!--
 - Pick the target path `/totvs/protheus`
 - Use service port `1000` instead of `1234`
 - Use service name `totvsappserver` instead of `totvs-appserver12`
 - DNS License Server is `localhost` on port `5555`
+-->
 - Create a initialize script with `vim /totvs/protheus/app.sh` and enter:
 ```bash
 #!/bin/bash
 
-declare -x LD_LIBRARY_PATH="/totvs/protheus/protheus/bin/appserver;"$LD_LIBRARY_PATH
+declare -x LD_LIBRARY_PATH="/totvs/protheus;"$LD_LIBRARY_PATH
 
 ulimit -n 32768
 ulimit -s 1024
 ulimit -m 6144000
 ulimit -v 6144000
 
-/totvs/protheus/protheus/bin/appserver/appsrvlinux
+/totvs/protheus/appsrvlinux
+```
+- Test execution with
+```bash
+chmod +x /totvs/protheus/app.sh
+/totvs/protheus/app.sh
 ```
 
+<!--
 ## Test Execution
 - Add execution permissions to `/totvs` folder
 ```bash
@@ -90,3 +104,4 @@ chmod -R 777 /totvs
 ```bash
 /totvs/dbaccess/dbmonitor
 ```
+-->
