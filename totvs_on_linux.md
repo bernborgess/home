@@ -104,4 +104,12 @@ chmod -R 777 /totvs
 ```bash
 /totvs/dbaccess/dbmonitor
 ```
+
+
+Create the folder structure
+```bash
+mkdir -p /totvs/protheus/bin/{appbroker,appsec01,appsec02,dbaccess,licenseserver,log}
+mkdir -p /totvs/protheus/rpo
+mkdir -p /totvs/protheus_data/{system,systemload}
+```
 -->
