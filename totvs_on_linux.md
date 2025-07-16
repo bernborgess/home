@@ -43,16 +43,33 @@ tar -xf 25-02-08-TOTVS_DBACCESS_BUILD_24.1.0.2_LINUX_X64.TAR.GZ -C /totvs/dbacce
 
 /totvs/dbaccess/multi/dbaccess64
 ```
-- Test the db running
+- Change the file `/totvs/dbaccess/multi/dbaccess.ini` to contain
+```ini
+[General]
+MAXSTRINGSIZE=500
+odbc30=1
+clientlibrary=/usr/lib64/libodbc.so
+codepage=WIN1252
+LicenseServer=
+LicensePort=0
+```
+- Test the db running (as root)
 ```bash
 chmod +x /totvs/dbaccess/app.sh
 /totvs/dbaccess/app.sh
 ```
-- Open `dbmonitor` in another shell with
+- Open `dbmonitor` in another shell (not as root) with
 ```bash
 /totvs/dbaccess/dbmonitor
 ```
 And check that `localhost:7890` works...
+- Under "Configurações" > "Postgres", setup the database
+  - Ambiente > Novo, enter "totvsapp"
+  - Fill in "Usuário" with "Nome" and "Senha"
+  - Save
+- Under "Assistentes" > "Validação de Conexão"
+  - Select "Postgres" for "Base de Dados"
+  - Type "totvsapp" for the "ambiente"
 
 ## Installing Protheus AppServer
 > :construction: Not ready yet...
