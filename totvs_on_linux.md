@@ -4,6 +4,7 @@
 - TOTVS License Server [24-12-16-TOTVSLICENSE_3.6.3_1_LINUX.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1137544)
 - DBACCESS [25-02-08-TOTVS_DBACCESS_BUILD_24.1.0.2_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168439)
 - APPSERVER [25-03-28-P12_APPSERVER_BUILD-24.3.0.5_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168421)
+<!-- - SMARTCLIENT HARPIA [25-04-14-P12-SMARTCLIENT_BUILD 20.3.2.12_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1112223) -->
 
 <!-- - RESPOSITORIO [24-08-27_ATUALIZACAO_12.1.33_RH_MI_EXPEDICAO_CONTINUA.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1043595) -->
 <!-- - DICIONARIO DE DADOS [21-10-08-BRA-DICIONARIOS_COMPL_12_1_33.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1031455) -->
@@ -75,17 +76,11 @@ And check that `localhost:7890` works...
 
 ## Installing Protheus AppServer
 > :construction: Not ready yet...
-- Decompress the dbaccess archive pointing to the install folder
-```
+- Decompress the appserver archive pointing to the install folder
+```bash
 mkdir /totvs/protheus
 tar -xf 25-03-28-P12_APPSERVER_BUILD-24.3.0.5_LINUX_X64.TAR.GZ -C /totvs/protheus
 ```
-<!--
-- Pick the target path `/totvs/protheus`
-- Use service port `1000` instead of `1234`
-- Use service name `totvsappserver` instead of `totvs-appserver12`
-- DNS License Server is `localhost` on port `5555`
--->
 - Create a initialize script with `vim /totvs/protheus/app.sh` and enter:
 ```bash
 #!/bin/bash
@@ -155,30 +150,32 @@ chmod +x /totvs/protheus/app.sh
 /totvs/protheus/app.sh
 ```
 
+
 <!--
-## Test Execution
-- Add execution permissions to `/totvs` folder
+## Installing the Smart Client
+- Decompress the smartclient archive pointing to the install folder
 ```bash
-chmod -R 777 /totvs
+mkdir /totvs/smartclient
+tar -xf 25-04-14-P12-SMARTCLIENT_BUILD\ 20.3.2.12_LINUX_X64.TAR.GZ -C /totvs/smartclient
 ```
-- Run as `root` and wait for server booting
-```bash
-/totvs/totvslicense/app.sh
-```
-- In _another_ `root` shell run
-```bash
-/totvs/dbaccess/app.sh
-```
-- Test the database connection with 
-```bash
-/totvs/dbaccess/dbmonitor
-```
+- Edit the file `/totvs/smartclient/smartclient.ini`
+```ini
+[config]
+lastmainprog=sigamdi,sigacfg,mpsdu
+envserver=totvsapp
 
+[drivers]
+active=tcp
 
-Create the folder structure
-```bash
-mkdir -p /totvs/protheus/bin/{appbroker,appsec01,appsec02,dbaccess,licenseserver,log}
-mkdir -p /totvs/protheus/rpo
-mkdir -p /totvs/protheus_data/{system,systemload}
+[tcp]
+server=localhost
+port=1000
 ```
+- Execute the smartclient (not as root)
+```bash
+/totvs/smartclient/smartclient
+```
+- Pick `SIGACFG`
+- 
+
 -->
