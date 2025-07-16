@@ -28,7 +28,7 @@ sudo su
 - Use the default ports and accept the binaries
 - Check that it works and the service is running with
 ```bash
-systemctl licenseVirtual.service
+systemctl status licenseVirtual.service
 ```
 
 ## Installing DB Access
