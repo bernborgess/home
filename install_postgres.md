@@ -130,4 +130,4 @@ systemctl enable --now snapd.apparmor
 ```bash
 sudo snap install dbeaver-ce
 ```
-> You may need to reboot to see the app under "Development"
+> You may need to login again to see the app under "Development"
