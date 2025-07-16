@@ -44,7 +44,7 @@ psql -c "create tablespace totvsapp_index owner totvsapp location '/postgres/pgd
 psql -c "create database totvsapp with owner totvsapp template = template0 encoding = 'WIN1252' lc_collate = 'C' lc_ctype = 'C' tablespace = totvsapp_data connection limit -1"
 ```
 - Find and alter the `/var/lib/pgsql/data/pg_hba.conf` file as root from
-```
+```apacheconf
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
 
 # "local" is for Unix domain socket connections only
@@ -58,29 +58,39 @@ host    all             all             ::1/128                 ident
 local   replication     all                                     peer
 host    replication     all             127.0.0.1/32            ident
 host    replication     all             ::1/128                 ident
+```
+to, changing `md5` in these 3 places:
+```apacheconf
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
 
-
+# "local" is for Unix domain socket connections only
+local   all             all                                     md5
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            md5
+# IPv6 local connections:
+host    all             all             ::1/128                 md5
+# Allow replication connections from localhost, by a user with the
+# replication privilege.
+local   replication     all                                     peer
+host    replication     all             127.0.0.1/32            ident
+host    replication     all             ::1/128                 ident
+```
+- Restart the database service
+```bash
+systemctl restart postgresql
 ```
 
-
-
-
-
-
-
-
-
-//-- Localizar e alterar arquivo com a forma de autenticacao do banco
-find / -name "pg_hba.conf"
-nano /var/lib/pgsql/data/pg_hba.conf
-
-//-- Reiniciar o servico do banco
-systemctl restart postgresql
-
-//-- Localizar o arquivo de configuracoes ODBC e criar uma nova conexao odbc
-find / -name "odbc.ini"
-nano /etc/unixODBC/odbc.ini
-
+## Configure ODBC Connection
+- Check the name of the ODBC driver that was created in `/etc/unixODBC/odbcinst.ini`, for example:
+```ini
+[PSQL]
+Description=PostgreSQL
+Driver64=/usr/lib64/psqlodbcw.so
+UsageCount=1
+```
+  here the name we want is `PSQL`.
+- Edit the file `/etc/unixODBC/odbc.ini` to contain (change the `Driver` and `Password`)
+```ini
 [totvsapp]
 Description=PostgreSQL
 Driver=PSQL
@@ -89,7 +99,7 @@ TraceFile=/tmp/psqlodbc_totvsapp.log
 Servername=127.0.0.1
 Database=totvsapp
 UserName=totvsapp
-Password=totvsapp
+Password=changeme
 Port=5432
 ReadOnly=No
 RowVersioning=No
@@ -97,19 +107,27 @@ ShowSystemTables=No
 ShowOidColumn=No
 FakeOidIndex=No
 ConnSettings=
-
-nano /etc/unixODBC/odbcinst.ini
-
-//-- Testar a conexao
+```
+- Test the connection (should appear "Connected!")
+```bash
 isql -v totvsapp
+```
 
-//-- instalar snapd para instalar dbeaver
-sudo zypper addrepo --refresh https://download.opensuse.org/reposit... snappy
-sudo zypper --gpg-auto-import-keys refresh
-sudo zypper dup --from snappy
-sudo zypper in snapd
-sudo systemctl enable --now snapd
-sudo systemctl enable --now snapd.apparmor
-
-//-- Instalar o dbeaver
+## Install DBeaver tool for database visualization
+- Get the [snap repository](https://en.opensuse.org/Snap) for this OpenSuse version
+```bash
+zypper ar -f https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.6/ snappy
+zypper --gpg-auto-import-keys refresh
+zypper dup --from snappy
+``` 
+- Install and enable the `snapd` package manager
+```bash
+zypper in snapd
+systemctl enable --now snapd
+systemctl enable --now snapd.apparmor
+```
+- Install the `dbeaver` tool itself (not as root)
+```bash
 sudo snap install dbeaver-ce
+```
+> You may need to reboot to see the app under "Development"
