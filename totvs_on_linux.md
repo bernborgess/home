@@ -99,6 +99,56 @@ ulimit -v 6144000
 
 /totvs/protheus/appsrvlinux
 ```
+- Create the folder structure
+```bash
+mkdir -p /totvs/protheus/bin/{appbroker,appsec01,appsec02,dbaccess,licenseserver,log}
+mkdir -p /totvs/protheus/rpo
+mkdir -p /totvs/protheus_data/{system,systemload}
+```
+- Edit the file `/totvs/protheus/appserver.ini`:
+```ini
+[totvsapp]
+SourcePath=/totvs/protheus/
+RpoCustom=/totvs/protheus/tlpp.rpo
+RootPath=/totvs/protheus_data
+StartPath=/system/
+x2_path=
+RpoDb=top
+RpoLanguage=multi
+RpoVersion=120
+LocalFiles=CTREE
+Trace=0
+localdbextensions=.dtc
+StartSysInDB=1
+consolelog=1
+topmemomega=50
+
+[general]
+consolelog=/totvs/protheus/app-1000.log
+maxStringSize=500
+
+[dbaccess]
+port=7890
+server=localhost
+database=postgres
+alias=totvsapp
+
+[Drivers]
+Active=TCP
+MultiProtocolPort=0
+
+[TCP]
+TYPE=TCPIP
+Port=1000
+
+[Service]
+Name=totvsappserver
+DisplayName=totvs | appserver 12
+
+[LICENSECLIENT]
+server=localhost
+port=5555
+```
 - Test execution with
 ```bash
 chmod +x /totvs/protheus/app.sh
