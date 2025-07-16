@@ -113,7 +113,7 @@ ConnSettings=
 isql -v totvsapp
 ```
 
-## Install DBeaver tool for database visualization
+## DBeaver tool for database visualization
 - Get the [snap repository](https://en.opensuse.org/Snap) for this OpenSuse version
 ```bash
 zypper ar -f https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.6/ snappy
@@ -131,3 +131,9 @@ systemctl enable --now snapd.apparmor
 sudo snap install dbeaver-ce
 ```
 > You may need to login again to see the app under "Development"
+- When the app launches, create a new PostgreSQL connection
+- Under `Authentication` add the database `Password`
+- Tick `Show all databases`
+- Click on `Test Connection ...` and download the drivers.
+- Check that the `totvsapp` database is created on the interface
+<img width="353" height="335" alt="dbeaver-totvsapp" src="https://github.com/user-attachments/assets/b3b5fbc9-ea90-4991-8b82-233326ed8c69" />
