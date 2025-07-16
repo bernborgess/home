@@ -50,8 +50,8 @@ MAXSTRINGSIZE=500
 odbc30=1
 clientlibrary=/usr/lib64/libodbc.so
 codepage=WIN1252
-LicenseServer=
-LicensePort=0
+LicenseServer=localhost
+LicensePort=5555
 ```
 - Test the db running (as root)
 ```bash
@@ -66,10 +66,12 @@ And check that `localhost:7890` works...
 - Under "Configurações" > "Postgres", setup the database
   - Ambiente > Novo, enter "totvsapp"
   - Fill in "Usuário" with "Nome" and "Senha"
-  - Save
+  - Salvar
 - Under "Assistentes" > "Validação de Conexão"
   - Select "Postgres" for "Base de Dados"
   - Type "totvsapp" for the "ambiente"
+  - Check that connection is OK
+
 
 ## Installing Protheus AppServer
 > :construction: Not ready yet...
