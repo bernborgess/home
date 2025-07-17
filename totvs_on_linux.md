@@ -31,6 +31,7 @@ sudo su
 ```bash
 systemctl status licenseVirtual.service
 ```
+- Now configure the licenses by accessing the [localhost:8020](http://localhost:8020/)
 
 ## Installing DB Access
 - Decompress the dbaccess archive pointing to the install folder
