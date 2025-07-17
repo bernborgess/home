@@ -151,5 +151,5 @@ port=8089
 chmod +x /totvs/protheus/app.sh
 /totvs/protheus/app.sh
 ```
-- Access the [web app](http://localhost:8089)
+- Access the [web app](http://localhost:8089/webapp/)
   
