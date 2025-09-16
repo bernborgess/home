@@ -60,6 +60,7 @@ chmod +x /totvs/dbaccess/app.sh
 ```
 And check that `localhost:7890` works...
 - Under "Configurações" > "Postgres", setup the database
+> Don't have `postgres` installed? Check this [tutorial](./install_postgres.md)
   - Ambiente > Novo, enter "totvsapp"
   - Fill in "Usuário" with "Nome" and "Senha"
   - Salvar
