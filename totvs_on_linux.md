@@ -1,7 +1,7 @@
 # Install TOTVS Protheus on openSUSE
 
 ## Download the required files
-- TOTVS License Server [24-12-16-TOTVSLICENSE_3.6.3_1_LINUX.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1137544)
+- TOTVS License Server [25-08-18-TOTVSLICENSE_3.7.0_LINUX.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1137544)
 - DBACCESS [25-02-08-TOTVS_DBACCESS_BUILD_24.1.0.2_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168439)
 - APPSERVER [25-03-28-P12_APPSERVER_BUILD-24.3.0.5_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168421)
 - RPO [24-10-10-REPOSITORIO_DE_OBJETOS_BRASIL_12_1_2410_TTTM120.RPO](https://suporte.totvs.com/portal/p/10098/download?e=1167442)
@@ -9,8 +9,9 @@
 ## Installing TOTVS License Server
 - Decompress the totvslicense archive
 ```bash
-tar -xf 24-12-16-TOTVSLICENSE_3.6.3_1_LINUX.TAR.GZ
-cd 24-12-16-TOTVSLICENSE_3.6.3_1_LINUX
+mkdir ~/Downloads/license-files
+tar -xf 25-08-18-TOTVSLICENSE_3.7.0_LINUX.TAR.GZ -C ~/Downloads/license-files
+cd ~/Downloads/license-files
 ```
 - Run the `install` file as `root`
 ```bash
