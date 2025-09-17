@@ -5,6 +5,7 @@
 - DBACCESS [25-02-08-TOTVS_DBACCESS_BUILD_24.1.0.2_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168439)
 - APPSERVER [25-03-28-P12_APPSERVER_BUILD-24.3.0.5_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168421)
 - RPO [24-10-10-REPOSITORIO_DE_OBJETOS_BRASIL_12_1_2410_TTTM120.RPO](https://suporte.totvs.com/portal/p/10098/download?e=1167442)
+- WEBAPP [25-08-06-P12_SMARTCLIENT_WEBAPP_10.1.3_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168456)
 
 ## Installing TOTVS License Server
 - Decompress the totvslicense archive
@@ -147,6 +148,10 @@ port=5555
 
 [WEBAPP]
 port=8089
+```
+- Extract the Smart Client `webapp.so` file in the correct location:
+```bash
+tar -xf 25-08-06-P12_SMARTCLIENT_WEBAPP_10.1.3_LINUX_X64.TAR.GZ -C /totvs/protheus
 ```
 - Test execution with
 ```bash
