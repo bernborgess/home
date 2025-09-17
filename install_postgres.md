@@ -19,7 +19,7 @@ passwd postgres
 mkdir /postgres
 chown -R postgres /postgres
 ```
-- Change user to `posgres` and define the database password (Change the `PASSWORD` variable)
+- Change user to `postgres` and define the database password (Change the `PASSWORD` variable)
 ```bash
 su postgres
 PASSWORD=changeme
