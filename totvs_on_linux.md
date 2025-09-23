@@ -132,7 +132,8 @@ alias=totvsapp
 
 [Drivers]
 Active=TCP
-MultiProtocolPort=0
+MultiProtocolPortSecure=0
+MultiProtocolPort=1
 
 [TCP]
 TYPE=TCPIP
