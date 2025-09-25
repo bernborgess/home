@@ -6,8 +6,9 @@
 - APPSERVER [25-03-28-P12_APPSERVER_BUILD-24.3.0.5_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168421)
 - RPO [24-10-10-REPOSITORIO_DE_OBJETOS_BRASIL_12_1_2410_TTTM120.RPO](https://suporte.totvs.com/portal/p/10098/download?e=1167442)
 - WEBAPP [25-08-06-P12_SMARTCLIENT_WEBAPP_10.1.3_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168456)
+<!-- NOT NEEDED UNTIL FURTHER NOTICE (integration web spreadsheets that escape the brower
 - WEBAGENT [25-08-04-P12_SMARTCLIENT_WEB-AGENT_1.0.22_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168423)
-
+-->
 ## Installing TOTVS License Server
 - Decompress the totvslicense archive
 ```bash
@@ -152,6 +153,7 @@ port=5555
 port=8089
 ```
 
+<!-- No need for WebAgent for this simple install
 ## WebAgent Setup (?)
 > TODO: What is this for?
 - Extract the WebAgent file and install the `.rpm` package
@@ -160,7 +162,7 @@ tar -xzf 25-08-04-P12_SMARTCLIENT_WEB-AGENT_1.0.22_LINUX_X64.TAR.GZ
 sudo zypper in ./web-agent-1.0.22-linux-x64-release.rpm 
 # Problema: 1: nada fornece 'libXtst' necessário para o web-agent-1.0.22-1.0.22.0.x86_64 instalado
 ```
-
+-->
 
 ## Smart Client WebApp Setup
 - Extract the Smart Client `webapp.so` file in the correct location:
