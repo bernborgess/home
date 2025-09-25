@@ -151,6 +151,18 @@ port=5555
 [WEBAPP]
 port=8089
 ```
+
+## WebAgent Setup (?)
+> TODO: What is this for?
+- Extract the WebAgent file and install the `.rpm` package
+```bash
+tar -xzf 25-08-04-P12_SMARTCLIENT_WEB-AGENT_1.0.22_LINUX_X64.TAR.GZ 
+sudo zypper in ./web-agent-1.0.22-linux-x64-release.rpm 
+# Problema: 1: nada fornece 'libXtst' necessário para o web-agent-1.0.22-1.0.22.0.x86_64 instalado
+```
+
+
+## Smart Client WebApp Setup
 - Extract the Smart Client `webapp.so` file in the correct location:
 ```bash
 tar -xf 25-08-06-P12_SMARTCLIENT_WEBAPP_10.1.3_LINUX_X64.TAR.GZ -C /totvs/protheus
