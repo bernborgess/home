@@ -114,23 +114,23 @@ isql -v totvsapp
 ```
 
 ## DBeaver tool for database visualization
-- Get the [snap repository](https://en.opensuse.org/Snap) for this OpenSuse version
-```bash
-zypper ar -f https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.6/ snappy
-zypper --gpg-auto-import-keys refresh
-zypper dup --from snappy
-``` 
-- Install and enable the `snapd` package manager
-```bash
-zypper in snapd
-systemctl enable --now snapd
-systemctl enable --now snapd.apparmor
+- Install [flatpak](https://flathub.org/en/setup/openSUSE) from the command line with zypper
 ```
-- Install the `dbeaver` tool itself (not as root)
-```bash
-sudo snap install dbeaver-ce
+sudo zypper install flatpak
 ```
-> You may need to login again to see the app under "Development"
+- Add the Flathub repository
+```
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+```
+- Reboot the system to use Flathub.
+- Install `dbeaver` from [Flathub](https://flathub.org/en/apps/io.dbeaver.DBeaverCommunity):
+```
+flatpak install flathub io.dbeaver.DBeaverCommunity
+```
+- Run it from command line, or from the start menu, on the "Development" section
+```
+flatpak run io.dbeaver.DBeaverCommunity
+```
 - When the app launches, create a new PostgreSQL connection
 - Under `Authentication` add the database `Password`
 - Tick `Show all databases`
