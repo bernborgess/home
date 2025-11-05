@@ -84,7 +84,7 @@ tar -xf 25-03-28-P12_APPSERVER_BUILD-24.3.0.5_LINUX_X64.TAR.GZ -C /totvs/protheu
 ```bash
 #!/bin/bash
 
-declare -x LD_LIBRARY_PATH="/totvs/protheus;"$LD_LIBRARY_PATH
+declare -x LD_LIBRARY_PATH="/totvs/protheus;$LD_LIBRARY_PATH"
 
 ulimit -n 32768
 ulimit -s 1024
@@ -169,10 +169,85 @@ sudo zypper in ./web-agent-1.0.22-linux-x64-release.rpm
 ```bash
 tar -xf 25-08-06-P12_SMARTCLIENT_WEBAPP_10.1.3_LINUX_X64.TAR.GZ -C /totvs/protheus
 ```
+- Configure the client in `/totvs/protheus/smartclient.ini`: (?)
+```ini
+[config]
+lastmainprog=sigamdi,sigacfg,mpsdu
+envserver=totvsapp
+
+[drivers]
+active=tcp
+
+[tcp]
+server=localhost
+port=1000
+```
 - Test execution with
 ```bash
 chmod +x /totvs/protheus/app.sh
 /totvs/protheus/app.sh
 ```
-- Access the [web app](http://localhost:8089/webapp/)
-  
+- Access the [web app at localhost:8089/webapp](http://localhost:8089/webapp/)
+- Click the cog icon :gear: and:
+  - "Programa Inicial" > "Incluir" > `SIGACFG`
+  - "Programa Inicial" > "Incluir" > `SIGAMDI`
+  - "Programa Inicial" > "Incluir" > `MPSDU`
+  - "Ambiente no servidor" > "Incluir" > `totvsapp`
+- Go back and choose `SIGACFG`.
+- "Criar uma empresa TESTE".
+- .. ?
+
+
+## TODO: Create services
+
+- Create the file `/usr/lib/systemd/system/totvsdb.service` as root:
+```ini
+[Unit]
+Description=totvs dbaccess
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/totvs/dbaccess/app.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+- Enable the dbaccess service
+```bash
+systemctl enable totvsdb.service
+```
+- Create the file `/usr/lib/systemd/system/totvsappserver.service` as root:
+```ini
+[Unit]
+Description=totvs appserver - porta 1000
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/totvs/protheus/app.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+- Enable the appserver service
+```bash
+systemctl enable totvsappserver.service
+```
+- Check they worked:
+```bash
+systemctl start totvsdb
+systemctl status totvsdb
+# Check if active (running)
+
+systemctl start totvsappserver
+systemctl status totvsappserver
+```
