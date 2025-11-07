@@ -1,5 +1,10 @@
 # Install TOTVS Protheus on openSUSE
 
+## Automatic install :robot:
+> Maybe this works??
+- Download the Linux installer [25-10-22-INSTALADOR_PROTHEUS_LINUX_12.1.2510.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1220267)
+- Read the [docs](https://tdn.totvs.com/display/public/PROT/Instalador+Protheus+Linux+12.1.2510) ...
+
 ## Download the required files
 - TOTVS License Server [25-08-18-TOTVSLICENSE_3.7.0_LINUX.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1137544)
 - DBACCESS [25-02-08-TOTVS_DBACCESS_BUILD_24.1.0.2_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168439)
