@@ -6,6 +6,7 @@
 - APPSERVER [25-03-28-P12_APPSERVER_BUILD-24.3.0.5_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168421)
 - RPO [24-10-10-REPOSITORIO_DE_OBJETOS_BRASIL_12_1_2410_TTTM120.RPO](https://suporte.totvs.com/portal/p/10098/download?e=1167442)
 - WEBAPP [25-08-06-P12_SMARTCLIENT_WEBAPP_10.1.3_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168456)
+- MENUS [25-10-06-BRA-MENUS_12_1_2510.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1217203)
 <!-- NOT NEEDED UNTIL FURTHER NOTICE (integration web spreadsheets that escape the brower
 - WEBAGENT [25-08-04-P12_SMARTCLIENT_WEB-AGENT_1.0.22_LINUX_X64.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1168423)
 -->
@@ -98,11 +99,16 @@ ulimit -v 6144000
 mkdir -p /totvs/protheus/apo
 cp 24-10-10-REPOSITORIO_DE_OBJETOS_BRASIL_12_1_2410_TTTM120.RPO /totvs/protheus/apo/tttm120.rpo
 ```
-<!--
+- Create these folders
+```bash
 mkdir -p /totvs/protheus/bin/{appbroker,appsec01,appsec02,dbaccess,licenseserver,log}
 mkdir -p /totvs/protheus/rpo
 mkdir -p /totvs/protheus_data/{system,systemload}
--->
+```
+- Insert the menu files into system folder
+```
+unzip 25-10-06-BRA-MENUS_12_1_2510.ZIP -d /totvs/protheus_data/system
+```
 - Edit the file `/totvs/protheus/appserver.ini`:
 ```ini
 [totvsapp]
