@@ -1,7 +1,8 @@
 # Install TOTVS Protheus on openSUSE
 
+> TODO: Move the totvslicense install up here.
+
 ## Automatic install :robot:
-> Maybe this works??
 - Download the Linux installer [25-10-22-INSTALADOR_PROTHEUS_LINUX_12.1.2510.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1220267)
 - Unzip the installer
 ```bash
@@ -32,6 +33,143 @@ ls /totvs/protheus
 # Should output
 # .installationinformation .uninstaller dbaccess protheus protheus_data
 ```
+- Move the `dbaccess` directory out of `protheus`
+```bash
+mv /totvs/protheus/dbaccess /totvs/dbaccess
+```
+- Check the files in `/totvs/dbaccess` are correct:
+```bash
+ls /totvs/dbaccess
+# Should output
+# client dbaccess.log dbconsole.log debug monitor_ru_ru.qm tools
+# dbaccess.ini dbaccess64 dbmonitor library multi
+```
+- Change the service file `/etc/systemd/service/totvsdbaccess/service` to point to the new location:
+```service
+[Unit]
+Description=TOTVS DBAccess Server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/totvs/dbaccess/dbaccess64 # Change here
+WorkingDirectory=/totvs/dbaccess # Change here
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
+```
+- Now restart the service
+```bash
+systemctl daemon-reload
+systemctl restart totvsdbaccess.service
+```
+- Give permissions under the `/totvs` directory:
+```bash
+chmod -R 777 /totvs
+```
+> The thread that executes protheus (`appsrvlinux`) needs to be configured with some memory and
+> storage limits, that's why we have to configure this execution with `appserver.sh`.
+- Edit the file `/totvs/protheus/protheus/bin/appserver/appserver.sh` to contain (more memory, remove the `-daemon`):
+```sh
+#!/bin/bash
+
+declare -x LD_LIBRARY_PATH="/totvs/protheus/protheus/bin/appserver:"$LD_LIBRARY_PATH
+
+ulimit -n 32768
+ulimit -s 1024
+ulimit -m 6144000
+ulimit -v 6144000
+/totvs/protheus/protheus/bin/appserver/appsrvlinux
+```
+- Rename to `app.sh`:
+```
+mv /totvs/protheus/protheus/bin/appserver/appserver.sh /totvs/protheus/protheus/bin/appserver/app.sh
+```
+- Make a copy for `dbaccess``
+```bash
+cp /totvs/protheus/prothus/bin/appserver/app.sh /totvs/dbaccess/app.sh
+```
+- Change `/totvs/dbaccess/app.sh` to contain:
+```sh
+#!/bin/bash
+
+/totvs/dbaccess/dbaccess64
+```
+- Let's check that the `dbaccess` service is running:
+```bash
+systemctl status totvsdbaccess.service
+# Should output
+# Active: active (running) ...
+```
+- Change the file `/totvs/dbaccess/dbaccess.ini` to contain:
+```ini
+[General]
+MAXSTRINGSIZE=500
+odbc30=1
+clientlibrary=/usr/lib64/libodbc.so
+codepage=WIN1252
+LicenseServer=localhost
+LicensePort=5555
+```
+- Restart the service:
+```bash
+systemctl restart totvsdbaccess.service
+```
+- Now check the connection with dbmonitor (not as root):
+```bash
+/totvs/dbaccess/dbmonitor
+```
+- In the `dbmonitor` graphic user interface:
+  - Use the default `Servidor` and `Porta`, click `OK`:
+    
+    <img width="286" height="171" alt="image" src="https://github.com/user-attachments/assets/2dea280c-bf94-4bab-9560-2db1c07ba69c" />
+
+  - Click `Configurações`:
+    
+    <img width="560" height="378" alt="image" src="https://github.com/user-attachments/assets/4f1be2e7-2a7f-4037-b511-09e47442bfc6" />
+
+  - Click `Postgres`:
+  
+    <img width="560" height="378" alt="image" src="https://github.com/user-attachments/assets/4ebbc110-4375-40f0-99cc-b809b3462b1d" />
+
+  - Create new Ambiente with nome `totvsapp`:
+
+    <img width="560" height="378" alt="image" src="https://github.com/user-attachments/assets/0cec5424-efcb-411c-add7-63aa4c16607c" />
+
+  - Enter Usuario fields Nome and Senha, click `Salvar`:
+
+    <img width="560" height="378" alt="image" src="https://github.com/user-attachments/assets/aba8bd09-4ed9-4e7b-a216-f0ea2f9bdfb2" />
+
+> Don't have `postgres` installed? Check this [tutorial](./install_postgres.md)
+
+  - Then go in "Assistentes" > "Validação de Conexão":
+  
+    <img width="560" height="400" alt="image" src="https://github.com/user-attachments/assets/004ac1f1-11f8-422d-9e6f-e32effb6e3e1" />
+
+
+  - Ambiente > Novo, enter "totvsapp"
+  - Fill in "Usuário" with "Nome" and "Senha"
+  - Salvar
+- Under "Assistentes" > "Validação de Conexão"
+  - Select "Postgres" for "Base de Dados"
+  - Type "totvsapp" for the "ambiente"
+  - Check that connection is OK
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Download the required files
