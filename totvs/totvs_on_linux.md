@@ -3,7 +3,36 @@
 ## Automatic install :robot:
 > Maybe this works??
 - Download the Linux installer [25-10-22-INSTALADOR_PROTHEUS_LINUX_12.1.2510.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1220267)
-- Read the [docs](https://tdn.totvs.com/display/public/PROT/Instalador+Protheus+Linux+12.1.2510) ...
+- Unzip the installer
+```bash
+unzip 25-10-22-INSTALADOR_PROTHEUS_LINUX_12.1.2510.ZIP
+```
+- Execute the installer as root
+```
+sudo su
+chmod +x TOTVS12.sh
+./TOTVS12.sh
+```
+- Interact with the installer now:
+  - Press `1` to continue, starting the installation.
+  - Press `Enter` 3 times to continue, reading the license.
+  - Press `1` to accept the license.
+  - **Select target path** type in `/totvs/protheus`, check with `1`.
+  - **Informe a configuracao do Pais** press enter for `2 [x] Brasil`, check with `1`.
+  - **Porta do servico do Appserver** type in `1000`.
+  - **Nome do servico do Appserver** type in `totvsappserver`.
+  - **Descricao do servico do Appserver** just press `Enter`.
+  - **Porta do servico do Webapp** just leave at `4321` and press `Enter`, check with `1`.
+  - **DNS License Server** type in `localhost`.
+  - **Porta** type in `5555`, check with `1`.
+  - Wait until `[ Console installation done ]` is displayed.
+- Check the files in `/totvs/protheus` are correct:
+```bash
+ls /totvs/protheus
+# Should output
+# .installationinformation .uninstaller dbaccess protheus protheus_data
+```
+
 
 ## Download the required files
 - TOTVS License Server [25-08-18-TOTVSLICENSE_3.7.0_LINUX.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1137544)
