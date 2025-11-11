@@ -148,16 +148,61 @@ systemctl restart totvsdbaccess.service
   - Then go in "Assistentes" > "Validação de Conexão":
   
     <img width="560" height="400" alt="image" src="https://github.com/user-attachments/assets/004ac1f1-11f8-422d-9e6f-e32effb6e3e1" />
-
-
-  - Ambiente > Novo, enter "totvsapp"
-  - Fill in "Usuário" with "Nome" and "Senha"
-  - Salvar
-- Under "Assistentes" > "Validação de Conexão"
   - Select "Postgres" for "Base de Dados"
   - Type "totvsapp" for the "ambiente"
   - Check that connection is OK
+  
+    <img width="231" height="191" alt="image" src="https://github.com/user-attachments/assets/710d8e5b-1d01-4bb2-8c7e-5578df023bbf" />
 
+- Change the file `/totvs/protheus/protheus/bin/appserver/appserver.ini` to contain:
+```ini
+[totvsapp]
+SourcePath=/totvs/protheus/protheus/apo
+RpoCustom=/totvs/protheus/protheus/apo/custom.rpo
+RootPath=/totvs/protheus/protheus_data
+StartPath=/system/
+x2_path=
+RpoDb=top
+RpoLanguage=multi
+RpoVersion=120
+LocalFiles=CTREE
+Trace=0
+localdbextensions=.dtc
+StartSysInDB=1
+consolelog=1
+topmemomega=50
+
+[general]
+consolelog=/totvs/protheus/app-1000.log
+maxStringSize=500
+app_environment=totvsapp
+
+[dbaccess]
+port=7890
+server=localhost
+database=postgres
+alias=totvsapp
+
+[Drivers]
+Active=TCP
+MultiProtocolPortSecure=0
+MultiProtocolPort=1
+
+[TCP]
+TYPE=TCPIP
+Port=1000
+
+[Service]
+Name=totvsappserver
+DisplayName=totvs | appserver 12
+
+[LICENSECLIENT]
+server=localhost
+port=5555
+
+[WEBAPP]
+port=8089
+```
 
 
 
