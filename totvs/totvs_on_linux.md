@@ -1,8 +1,28 @@
 # Install TOTVS Protheus on openSUSE
 
-> TODO: Move the totvslicense install up here.
+## Installing TOTVS License Server
+- Download TOTVS License Server [25-08-18-TOTVSLICENSE_3.7.0_LINUX.TAR.GZ](https://suporte.totvs.com/portal/p/10098/download?e=1137544) from the official website
+- Decompress the totvslicense archive
+```bash
+mkdir ~/Downloads/license-files
+tar -xf 25-08-18-TOTVSLICENSE_3.7.0_LINUX.TAR.GZ -C ~/Downloads/license-files
+cd ~/Downloads/license-files
+```
+- Run the `install` file as `root`
+```bash
+sudo su
+./install
+```
+- Accept all terms
+- Pick the target path `/totvs/totvslicense`
+- Use the default ports and accept the binaries
+- Check that it works and the service is running with
+```bash
+systemctl status licenseVirtual.service
+```
+- Now configure the licenses by accessing the [localhost:8020](http://localhost:8020/)
 
-## Automatic install :robot:
+## DbAccess + AppServer Installation
 - Download the Linux installer [25-10-22-INSTALADOR_PROTHEUS_LINUX_12.1.2510.ZIP](https://suporte.totvs.com/portal/p/10098/download?e=1220267)
 - Unzip the installer
 ```bash
@@ -201,20 +221,33 @@ server=localhost
 port=5555
 
 [WEBAPP]
-port=8089
+port=4321
+lastmainprog=SIGAMDI,SIGACFG,MPSDU
+envserver=totvsapp
 ```
+- Run the appserver as root
+```bash
+/totvs/protheus/protheus/bin/appserver/app.sh
+```
+- Enter the browser at [localhost:4321](http:/localhost4321)
+  - Configure Protheus with `SIGACFG`...
+- Create the `/usr/lib/systemd/system/totvsappserver.service` file
+```service
+[Unit]
+Description=totvs appserver - porta 1000
+After=network.target
+StartLimitIntervalSec=0
 
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/totvs/protheus/protheus/bin/appserver/app.sh
 
-
-
-
-
-
-
-
-
-
-
+[Install]
+WantedBy=multi-user.target
+```
 
 
 ## Download the required files
