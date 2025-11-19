@@ -258,3 +258,11 @@ systemctl status totvsappserver.service
 ```
 - Now the Protheus client will be available on [localhost:4321](http://localhost:4321) about one minute after the system boots.
 
+
+## Setting up for Development
+- Developers need the in the correct folder to compile projects, in our install we have a include folder at `/totvs/protheus/protheus/include`
+- Besides, we have to extract the [TLPP includes](https://centraldeatendimento.totvs.com/hc/pt-br/articles/28308373167127-Cross-Segmentos-TOTVS-Backoffice-Linha-Protheus-ADVPL-Como-extrair-as-includes-TLPP), go to the smart client and enter `tlpp.environment.getIncludesTLPP` as programa inicial and click ok.
+  
+  <img width="290" height="277" alt="getIncludesTLPP" src="https://github.com/user-attachments/assets/d68c5e55-bf50-4969-960e-cf2f3e05b96c" />
+- Now you may add `/totvs/protheus/protheus_data/includes` to your include path.
+
