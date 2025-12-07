@@ -28,11 +28,14 @@ Seriously? Well, if you want to compile your own packages with less than 4 gigab
 ## Void Linux
 Gotta learn more about this one. It's available [here](https://voidlinux.org/download/#i686)
 
+## FreeBSD :no_entry_sign:
+Stepping outside of the linux world for a change, but the DEs are the same old _KDE Plasma_, _Gnome_, _MATE_, _Cinnamon_ ... The version **FreeBSD 14.3** is the last one with
+i386 support, check the [where](https://www.freebsd.org/where/) page for the [installer](https://download.freebsd.org/releases/i386/i386/ISO-IMAGES/14.3/) or the [VM](https://download.freebsd.org/releases/VM-IMAGES/14.3-RELEASE/i386/Latest/), so it offers Security Support until [30 Jun 2026](https://endoflife.date/freebsd)
+
 ## NetBSD :goat:
-Right from the [home](https://www.netbsd.org/) you can see the [i386](https://wiki.netbsd.org/ports/i386/) option. it [actively supported](https://endoflife.date/netbsd) for version 10.
+Based on FreeBSD, but [actively supported](https://endoflife.date/netbsd) x86_32 for
+version 10. Right from the [home](https://www.netbsd.org/) you can see the [i386](https://wiki.netbsd.org/ports/i386/) option
 
-
-
-> [robo nuggie for FreeBSD Videos](https://www.youtube.com/@RoboNuggie0
+> Check [robo nuggie for FreeBSD Videos](https://www.youtube.com/@RoboNuggie0)
 
 
