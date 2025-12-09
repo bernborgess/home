@@ -23,10 +23,31 @@ xrandr --output HDMI-1 --mode 1920x1080 # Example resolution change
 cinnamon-session-quit --logout # Logs out of cinnamon
 cinnamon-settings # Shows the settings window
 ```
+- Temporary workaround: Comment out line 315 in `/usr/share/cinnamon/js/ui/main.js`
+```js
+  // Gio.DesktopAppInfo.set_desktop_env('X-Cinnamon'))
+```
+
 > In this state, to move a window you have to pinch on the right pixel of the top border of the window.
 - People talking about it:
   - [forum](https://forums.opensuse.org/t/cinnamon-desktop/189761/3)
   - [bug report](https://bugzilla.opensuse.org/show_bug.cgi?id=1250876)
+
+#### Customizing Cinnamon
+The stock cinnamon theme is very boring, so I'm refering to this [video](https://www.youtube.com/watch?v=onQ1ouhvCRo) to customize it for a mac look.
+  - [gnome-look - Space GTK Theme](www.gnome-look.org/p/2131750)
+  - [gnome-look - Hatter Icon Theme](www.gnome-look.org/p/2146096)
+  - [Google Fonts - Inter](fonts.google.com/specimen/Inter)
+  - Install Plank Dock
+    ```bash
+    sudo zypper in -t pattern devel_basis
+    sudo zypper install git autoconf automake
+    git clone https://github.com/ricotz/plank
+    cd plank/
+    ./autogen.sh --prefix=/usr
+    make -j$(nproc)
+    sudo make install
+    ```
 
 ## Alpine Linux
 Find at [downloads](https://www.alpinelinux.org/downloads/), in the _STANDARD_ pick the
