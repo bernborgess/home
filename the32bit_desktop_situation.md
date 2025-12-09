@@ -40,13 +40,8 @@ The stock cinnamon theme is very boring, so I'm refering to this [video](https:/
   - [Google Fonts - Inter](fonts.google.com/specimen/Inter)
   - Install Plank Dock
     ```bash
-    sudo zypper in -t pattern devel_basis
-    sudo zypper install git autoconf automake
-    git clone https://github.com/ricotz/plank
-    cd plank/
-    ./autogen.sh --prefix=/usr
-    make -j$(nproc)
-    sudo make install
+    sudo zypper in -opi
+    opi plank
     ```
 
 ## Alpine Linux
