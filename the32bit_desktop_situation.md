@@ -43,6 +43,7 @@ The stock cinnamon theme is very boring, so I'm refering to this [video](https:/
     sudo zypper in opi
     opi plank
     ```
+  - [MacOS Wallpapers](https://512pixels.net/projects/default-mac-wallpapers-in-5k/)
 
 ## Alpine Linux
 Find at [downloads](https://www.alpinelinux.org/downloads/), in the _STANDARD_ pick the
