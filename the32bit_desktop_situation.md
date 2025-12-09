@@ -40,7 +40,7 @@ The stock cinnamon theme is very boring, so I'm refering to this [video](https:/
   - [Google Fonts - Inter](fonts.google.com/specimen/Inter)
   - Install Plank Dock
     ```bash
-    sudo zypper in -opi
+    sudo zypper in opi
     opi plank
     ```
 
