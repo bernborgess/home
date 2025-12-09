@@ -14,6 +14,20 @@ from the official website, and get support as Debian LTS until 30 Jun 2028.
 Find at [tumbleweed](https://get.opensuse.org/tumbleweed/), just pick the
 Offline Image or Network Image at **Intel or AMD 32-bit desktops, laptops, and servers (i686)**. It's a rolling release, so better long term support.
 
+### Desktop Environments...
+- I'm trying to install cinnamon, which is not one of the default choices in the openSuse YaST2 installer, but there's a setting after "generic desktop" that allows picking it. However, after the install there's a black screen, not taskbar and windows have no buttons. I'm currently debugging this. Useful commands are:
+```bash
+xrandr # See available displays and resolutions
+xrandr --output HDMI-1 --mode 1920x1080 # Example resolution change
+
+cinnamon-session-quit --logout # Logs out of cinnamon
+cinnamon-settings # Shows the settings window
+```
+> In this state, to move a window you have to pinch on the right pixel of the top border of the window.
+- People talking about it:
+  - [forum](https://forums.opensuse.org/t/cinnamon-desktop/189761/3)
+  - [bug report](https://bugzilla.opensuse.org/show_bug.cgi?id=1250876)
+
 ## Alpine Linux
 Find at [downloads](https://www.alpinelinux.org/downloads/), in the _STANDARD_ pick the
 [x86 green button](https://dl-cdn.alpinelinux.org/alpine/v3.23/releases/x86/alpine-standard-3.23.0-x86.iso)
