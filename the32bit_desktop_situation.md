@@ -14,6 +14,48 @@ from the official website, and get support as Debian LTS until 30 Jun 2028.
 Find at [tumbleweed](https://get.opensuse.org/tumbleweed/), just pick the
 Offline Image or Network Image at **Intel or AMD 32-bit desktops, laptops, and servers (i686)**. It's a rolling release, so better long term support.
 
+### Desktop Environments - Cinnamon
+- I'm trying to install cinnamon, which is not one of the default choices in the openSuse YaST2 installer, but there's a setting after "generic desktop" that allows picking it. However, after the install there's a black screen, not taskbar and windows have no buttons. I'm currently debugging this. Useful commands are:
+```bash
+xrandr # See available displays and resolutions
+xrandr --output HDMI-1 --mode 1920x1080 # Example resolution change
+
+cinnamon-session-quit --logout # Logs out of cinnamon
+cinnamon-settings # Shows the settings window
+```
+- Temporary workaround: Comment out line 315 in `/usr/share/cinnamon/js/ui/main.js`
+```js
+  // Gio.DesktopAppInfo.set_desktop_env('X-Cinnamon'))
+```
+
+> In this state, to move a window you have to pinch on the right pixel of the top border of the window.
+- People talking about it:
+  - [forum](https://forums.opensuse.org/t/cinnamon-desktop/189761/3)
+  - [bug report](https://bugzilla.opensuse.org/show_bug.cgi?id=1250876)
+
+#### Customizing Cinnamon
+The stock cinnamon theme is very boring, so I'm refering to this [video](https://www.youtube.com/watch?v=onQ1ouhvCRo) to customize it for a mac look.
+  - [gnome-look - Space GTK Theme](www.gnome-look.org/p/2131750)
+  - [gnome-look - Hatter Icon Theme](www.gnome-look.org/p/2146096)
+  - [Google Fonts - Inter](fonts.google.com/specimen/Inter)
+  - Install Plank Dock
+    ```bash
+    sudo zypper in opi
+    opi plank
+    ```
+  - [MacOS Wallpapers](https://512pixels.net/projects/default-mac-wallpapers-in-5k/)
+
+### Desktop Environments - XFCE
+On understanding the common place of a 32 bit machine - not a lot of ram - it makes sense that we would go with a lightweight DE, which for openSUSE Tumbleweed is XFCE!
+
+- Customization [Horn](https://www.youtube.com/watch?v=4wfZI6C9Lrs&list=WL&index=15)
+    - [Qogir theme](www.xfce-look.org/p/1230631)
+    - [Qoogir icon theme](www.opendesktop.org/p/1296407)
+    - [Whisker menu transparent rounded DARK/LIGHT mode](www.opendesktop.org/p/173225)
+    - [Google Fonts - Inter](fonts.google.com/specimen/Inter)
+  > Not looking so good... might look up another theme
+
+
 ## Alpine Linux
 Find at [downloads](https://www.alpinelinux.org/downloads/), in the _STANDARD_ pick the
 [x86 green button](https://dl-cdn.alpinelinux.org/alpine/v3.23/releases/x86/alpine-standard-3.23.0-x86.iso)
