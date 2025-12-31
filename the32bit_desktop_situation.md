@@ -14,6 +14,8 @@ from the official website, and get support as Debian LTS until 30 Jun 2028.
 Find at [tumbleweed](https://get.opensuse.org/tumbleweed/), just pick the
 Offline Image or Network Image at **Intel or AMD 32-bit desktops, laptops, and servers (i686)**. It's a rolling release, so better long term support.
 
+[Alternative Link](https://download.opensuse.org/ports/i586/tumbleweed/iso/)
+
 ### Desktop Environments - Cinnamon
 - I'm trying to install cinnamon, which is not one of the default choices in the openSuse YaST2 installer, but there's a setting after "generic desktop" that allows picking it. However, after the install there's a black screen, not taskbar and windows have no buttons. I'm currently debugging this. Useful commands are:
 ```bash
