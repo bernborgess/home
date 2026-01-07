@@ -15,3 +15,15 @@ Assista os vídeos do Klaus para entender melhor o contexto e motivações por t
 
 ## Recursos
 - Entre no [grupo do telegram](https://t.me/Protheus1) para obter ajuda de outras pessoas que trabalham com Protheus.
+
+## Versoes Antigas
+Caso seja necessário algum artefato especificamente como Binários, RPO, Dicionário ou qualquer outra é possível que o mesmo seja baixado separadamente no portal de Downloads.
+Inclusive fazer uma instalação completa com esses artefatos em qualquer uma das versões suportadas, incluindo a 12.1.2210.
+ 
+Seguem os link das páginas centralizadoras, para facilitar localização dos artefatos.
+ 
+- Release 12.1.2510 - https://protheus-release.totvs.io
+- Release 12.1.2410 - https://tdn.totvs.com/pages/releaseview.action?pageId=836052340
+- Release 12.1.2310 - https://tdn.totvs.com/pages/releaseview.action?pageId=744479921
+- Release 12.1.2210 - https://tdn.totvs.com/pages/viewpage.action?pageId=684024371
+
