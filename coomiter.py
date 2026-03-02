@@ -6,6 +6,9 @@ from datetime import datetime, UTC
 # Params
 repo_name = "project_x"
 directory = f"archive-{repo_name}"
+
+# Create the logfile with
+# git log --authors="<name>" --all --pretty=format:"%at;%s" > <repo_name>.log
 log_file = f"../logs/{repo_name}.log"
 
 
