@@ -1,6 +1,6 @@
 
 ## Unlock account after multiple failed login attempts
-- Visit the [site](cloud.oracle.com)
+- Visit the [site](https://www.oracle.com)
 - Open live chat
 - Chat live with oracle sales
 - Get support
