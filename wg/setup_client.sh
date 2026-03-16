@@ -27,8 +27,8 @@ sudo apt install wireguard
 # Generate keys
 if [ ! -f ~/wireguard-keys/private ]; then
     print_blue "Generating wireguard keys"
-    cd ~/wireguard-keys
     mkdir -p ~/wireguard-keys
+    cd ~/wireguard-keys
     (umask 0077 && wg genkey | tee private | wg pubkey > public)
 else
     print_blue "The wireguard keys already exist, skipping"
