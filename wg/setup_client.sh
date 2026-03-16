@@ -25,15 +25,19 @@ print_blue "Installing wireguard"
 sudo apt install wireguard
 
 # Generate keys
-print_blue "Generating wireguard keys"
-mkdir ~/wireguard-keys
-cd ~/wireguard-keys
-(umask 0077 && wg genkey | tee private | wg pubkey > public)
+if [ ! -f ~/wireguard-keys/private ]; then
+    print_blue "The wireguard keys already exist, skipping"
+else
+    print_blue "Generating wireguard keys"
+    cd ~/wireguard-keys
+    mkdir -p ~/wireguard-keys
+    (umask 0077 && wg genkey | tee private | wg pubkey > public)
+fi
 
 # Setup wireguard config
 print_blue "Setting wireguard configuration"
 
-sudo cat >> /etc/wireguard/wg0.conf << END
+cat >> wg0.conf << END
 [Interface]
 PrivateKey = $(cat ~/wireguard-keys/private)
 Address = 10.8.0.$(echo $ID)
@@ -44,6 +48,9 @@ Endpoint = $(echo $WG_SERVER_ENDPOINT)
 AllowedIPs = 10.8.0.0/24
 PersistentKeepalive = 25
 END
+
+sudo cp wg0.conf /etc/wireguard/wg0.conf
+rm wg0.conf
 
 # Enable and start service
 print_blue "Starting wireguard service"
