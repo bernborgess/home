@@ -10,7 +10,7 @@ To format (automatically) a Cangjie `.cj` file in vscode, one can:
 
 TMP_FILE=/tmp/cangjieinput.cj
 # This is needed because cjfmt works on files, vscode passes stdin, expects stdout
-cp /dev/stdin $TMP_FILE 
+tee $TMP_FILE > /dev/null
 cjfmt -f $TMP_FILE > /dev/null
 cat $TMP_FILE
 ```
