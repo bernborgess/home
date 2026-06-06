@@ -75,3 +75,17 @@ There is a file in the repository called [accounts.json](accounts.json) and you 
 
 ### Portable
 In the root directory of the launcher
+
+## Desktop File
+- [logo](https://commons.wikimedia.org/wiki/File:Prism_Launcher_logo.svg)
+```
+[Desktop Entry]
+Name=Prism Launcher
+Comment=A Minecraft Launcher 
+Exec=/home/user/Games/PC/PrismLauncher.AppImage
+Icon=/home/user/Games/PC/PrismLauncher.png
+Terminal=false
+Type=Application
+Categories=Game;
+```
+
