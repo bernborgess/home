@@ -60,3 +60,5 @@ sudo systemctl enable --now wg-quick@wg0
 echo -e "\e[0;34m * Run this on the server:\e[0m"
 echo -e "\e[0;32m $ sudo wg set wg0 peer $(cat ~/wireguard-keys/public) allowed-ips 10.8.0.${ID}/32 \e[0m"
 
+sudo chmod -R o-r ~/wireguard-keys/
+
