@@ -78,14 +78,23 @@ In the root directory of the launcher
 
 ## Desktop File
 - [logo](https://commons.wikimedia.org/wiki/File:Prism_Launcher_logo.svg)
-```
+```bash
+LOCATION=$HOME/Games/Minecraft
+
+mkdir -p $LOCATION
+
+wget https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Prism_Launcher_logo.svg/500px-Prism_Launcher_logo.svg.png \
+ -O $LOCATION/PrismLauncher.png
+
+cat << EOF > $HOME/.local/share/applications/prismlauncher.desktop
 [Desktop Entry]
 Name=Prism Launcher
 Comment=A Minecraft Launcher 
-Exec=/home/user/Games/PC/PrismLauncher.AppImage
-Icon=/home/user/Games/PC/PrismLauncher.png
+Exec=$LOCATION/PrismLauncher.AppImage
+Icon=$LOCATION/PrismLauncher.png
 Terminal=false
 Type=Application
 Categories=Game;
+EOF
 ```
 
